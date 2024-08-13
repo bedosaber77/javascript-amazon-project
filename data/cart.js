@@ -10,6 +10,13 @@ export function UpdateCart() {
     })
     cartQuantity.innerText = q;
 }
+export function countCart() {
+    let q = 0;
+    cart.forEach(element => {
+        q += element.quantity;
+    })
+    return q;
+}
 export function addtoCart(productId) {
     let flag = false;
     for (let cartitem of cart) {

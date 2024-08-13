@@ -1,9 +1,11 @@
 import { getFromLocalStorge } from "../data/cart.js";
-import { removeFromCart, UpdateCart } from "./data/cart.js";
+import { countCart, removeFromCart, UpdateCart } from "./data/cart.js";
 import { getProductById } from "./services/findProduct.js";
 
 let cart = getFromLocalStorge();
-document.querySelector(".return-to-home-link").textContent = `${cart.length} items`
+let itemsnum =countCart();
+
+document.querySelector(".return-to-home-link").textContent = `${itemsnum} items`
 console.log(cart);
 const order = document.querySelector(".order-summary");
 cart.forEach(cartItem => {
@@ -83,6 +85,8 @@ cart.forEach(cartItem => {
 document.querySelectorAll(".delete-quantity-link").forEach(btn => {
     btn.addEventListener('click', event => {
         removeFromCart(btn.dataset.id);
+        itemsnum =countCart();
+        document.querySelector(".return-to-home-link").textContent = `${itemsnum} items`
         order.querySelector(`.a${btn.dataset.id}`).remove();
     })
 })
