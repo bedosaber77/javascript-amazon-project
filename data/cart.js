@@ -1,4 +1,7 @@
-export const cart = [];
+export let cart = getFromLocalStorge();
+if (!cart) {
+    cart = [];
+}
 export function UpdateCart() {
     let cartQuantity = document.querySelector(".cart-quantity");
     let q = 0;
@@ -23,7 +26,11 @@ export function addtoCart(productId) {
     }
     SaveTolocalStorge();
 }
-
+export function removeFromCart(id) {
+    cart = cart.filter(elem => elem.id != id);
+    console.log(cart);
+    SaveTolocalStorge();
+}
 function SaveTolocalStorge() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
