@@ -21,4 +21,12 @@ export function addtoCart(productId) {
             quantity: parseInt(document.querySelector(`.quantity-selector-${productId}`).value)
         });
     }
+    SaveTolocalStorge();
+}
+
+function SaveTolocalStorge() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+export function getFromLocalStorge() {
+    return JSON.parse(localStorage.getItem('cart'));
 }
