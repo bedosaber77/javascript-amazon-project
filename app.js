@@ -1,5 +1,5 @@
-import { products } from "../data/products.js";
-import { cart, UpdateCart, addtoCart } from "../data/cart.js";
+import { products } from "./data/products.js";
+import { cart, UpdateCart, addtoCart } from "./data/cart.js";
 
 const productsGrid = document.querySelector(".products-grid")
 
