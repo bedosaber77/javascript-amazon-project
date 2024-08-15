@@ -173,5 +173,5 @@ document.querySelector(".place-order-button").addEventListener('click', async ()
   saveOrder(orderDetails);
   console.log(getOrders());
   localStorage.removeItem('cart');
-  location.pathname = '/orders.html';
+  location.pathname = (location.hostname === '127.0.0.1') ? '/orders.html' : '/javascript-amazon-project/orders.html';
 });
