@@ -1,4 +1,4 @@
-import { getFromLocalStorge } from "../data/cart.js";
+import { getFromLocalStorge } from "./data/cart.js";
 import { countCart, removeFromCart, UpdateCart, updateCartElement, updateCartItemDeliveryOption } from "./data/cart.js";
 import { deliveryOptions } from "./data/deliveryOptions.js";
 import { getProductById } from "./services/findProduct.js";
